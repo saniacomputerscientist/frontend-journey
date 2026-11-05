@@ -1,0 +1,182 @@
+.main-showcase {
+    display: flex;  
+    flex-direction: row;           /* Flexbox active karne ke liye */
+    align-items: flex-start;   /* Dono cards ko upar se ek barabar line mein rakhne ke liye */
+    gap: 100px;                /* Dono cards ke darmiyan 100px ka gap (kam/zyada kar sakti hain) */
+    width: 100%;
+    box-sizing: border-box;
+     text-align: left; 
+    padding: 30px;
+  justify-content: space-around; /* Yeh cards ke darmiyan barabar faasla banayega */
+  align-items: center;
+  gap: 20px; /* Agar mazeed fix faasla chahiye toh gap istemal karein */
+  padding: 40px;
+}
+.recipe-Card{
+    width: 320px;
+    height: 430px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+      transition: transform 0.3s ease;
+padding-left: 10px;
+background-color: white;
+    display: inline-block;
+    vertical-align: top;
+     justify-content: space-between;
+  padding-bottom: 20px;
+  box-sizing: border-box; 
+}
+.recipe-image{
+    width:100%;
+    height: 200px;
+object-fit: cover;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+}
+.badge{
+    background:#ff4d4d;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Recipe-card:hover {
+  transform: translateY(-8px); /* Card 8 pixels upar lift hoga */
+}
+.recipe-btn{
+      display: inline-block;
+  align-self: flex-start; /* Button ko left side par align rakhne ke liye */
+  margin-top: auto; /* Yeh button ko baki text se dhakel kar auto-bottom par fit karega */
+  padding: 8px 16px;
+  background-color: #ff4d4d; /* Background color (red) */
+  color: white; /* Text color white kar dein taake behtar lage */
+  text-decoration: none;
+  border-radius: 5px;
+}
+.shopping-card {
+    position: relative;
+    width: 320px;
+    height: 430px;
+    background: linear-gradient(135deg, #141414, #731818);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    overflow: hidden;
+    margin: 20px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.product-img-box {
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4757;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.specs-tags {
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+.price-section {
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.new-price {
+    color: #ff4757;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.buy-btn {
+    width: 100%;
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.buy-btn:hover {
+    background: #e03d4f;
+}
+
+/* 3rd Card: ATM Card Custom Styles */
+.atm-card{
+    width:320px;
+    height:430x;
+    border-radius:15px;
+    margin: 20px 20px 20px 150p;
+    padding:15px;
+    background: linear-gradient(135deg, #141414, #282828);
+     font-family: 'Courier New', Courier, monospace; 
+     color:white;
+      display: inline-block;  
+    vertical-align: top;  
+    margin-left: 80px;
+}
+.atm-chip{
+    width:40px;
+    height:30px;
+    border-radius:5px;
+    background-color: gold;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.card-number{
+    font-size: large;
+    letter-spacing: 2px;
+}
+.holder-info{
+    float:left;
+}
+.expiry-info{
+    float: right;
+}
+.label{
+    font-size: small;
+    color: pink;
+}
