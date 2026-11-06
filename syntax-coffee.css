@@ -1,0 +1,38 @@
+body{
+    font-family: 'Share Tech Mono', monospace;
+background-color: #e0e0e0;
+}
+.receipt-card{
+    background-color: #ffffff;
+    width:350px;
+    margin:50px auto;
+    padding: 20px 20px 80px 20px; /* Iska matlab hai: Top, Right, Bottom, Left. Bottom mein 60px space ho jayegi! */
+        position:relative;
+
+}
+.receipt-header{
+    text-align: center;
+    font-family: monospace;
+}
+.divider{
+    border-top: 2px dashed #000000;
+    margin:15px 0;
+}
+.item-name{
+    float:left;
+}
+.item-price{
+    float: right;
+}
+.stamp{
+    position: absolute;
+    bottom: 20px;       /* Is se wo card ke bilkul bottom se 20px upar set ho jayega */
+    right: 20px;        /* Is se wo bilkul right side par chala jayega */
+    
+    /* Stamp ko red aur bold look dene ke liye */
+    color: #ff0000;
+    border: 3px solid #ff0000;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
