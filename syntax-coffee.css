@@ -8,7 +8,6 @@ background-color: #e0e0e0;
     margin:50px auto;
     padding: 20px 20px 80px 20px; /* Iska matlab hai: Top, Right, Bottom, Left. Bottom mein 60px space ho jayegi! */
         position:relative;
-
 }
 .receipt-header{
     text-align: center;
@@ -28,7 +27,6 @@ background-color: #e0e0e0;
     position: absolute;
     bottom: 20px;       /* Is se wo card ke bilkul bottom se 20px upar set ho jayega */
     right: 20px;        /* Is se wo bilkul right side par chala jayega */
-    
     /* Stamp ko red aur bold look dene ke liye */
     color: #ff0000;
     border: 3px solid #ff0000;
