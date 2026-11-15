@@ -98,11 +98,9 @@ border-top-right-radius: 15px;
     margin: 0 0 10px 0;
     font-size: 18px;
 }
-
 .specs-tags {
     margin-bottom: 15px;
 }
-
 .tag {
     background: rgba(255, 255, 255, 0.15);
     padding: 3px 8px;
@@ -121,13 +119,11 @@ border-top-right-radius: 15px;
     font-size: 13px;
     margin-right: 10px;
 }
-
 .new-price {
     color: #ff4757;
     font-weight: bold;
     font-size: 16px;
 }
-
 .buy-btn {
     width: 100%;
     background: #ff4757;
@@ -139,7 +135,6 @@ border-top-right-radius: 15px;
     font-weight: bold;
     transition: background 0.3s;
 }
-
 .buy-btn:hover {
     background: #e03d4f;
 }
