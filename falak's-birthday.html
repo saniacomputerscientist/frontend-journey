@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Falak Chaudhary — From Sania</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light-pink: #ffeef5;
+      --bg-soft-pink: #ffd9e8;
+      --dark-pink: #d81b60;
+      --dark-pink-hover: #ad1457;
+      --accent-rose: #ff4081;
+      --card-bg: rgba(255, 255, 255, 0.87);
+      --text-dark: #3b1426;
+      --text-muted: #7a425b;
+      --shadow-soft: 0 12px 30px rgba(216, 27, 96, 0.14);
+      --shadow-hover: 0 18px 40px rgba(216, 27, 96, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff0f6 0%, #ffe3ef 45%, #ffd6e7 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient & Celebration Floating Layers */
+    #ambient-layer,
+    #celebration-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    #celebration-layer {
+      z-index: 50;
+    }
+
+    .floating-item {
+      position: absolute;
+      bottom: -80px;
+      user-select: none;
+      will-change: transform, opacity;
+      animation: floatUp linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }
+      12% {
+        opacity: 0.95;
+      }
+      50% {
+        transform: translateY(-55vh) translateX(var(--sway, 35px)) rotate(18deg) scale(1);
+      }
+      88% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-115vh) translateX(calc(var(--sway, 35px) * -0.7)) rotate(-15deg) scale(1.05);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 105, 180, 0.35);
+      border-radius: 32px;
+      padding: 40px 26px 44px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 42px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe0ec;
+      color: var(--dark-pink);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Fredoka', cursive;
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      color: var(--dark-pink);
+      line-height: 1.15;
+      margin-bottom: 10px;
+      text-shadow: 0 3px 12px rgba(216, 27, 96, 0.12);
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+
+    .subtitle strong {
+      color: var(--dark-pink);
+    }
+
+    /* Birthday Cake & Candles */
+    .cake-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px auto 28px;
+    }
+
+    .cake {
+      position: relative;
+      width: 230px;
+      height: 155px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .candles-row {
+      display: flex;
+      gap: 22px;
+      position: relative;
+      z-index: 4;
+      margin-bottom: -4px;
+    }
+
+    .candle {
+      position: relative;
+      width: 14px;
+      height: 44px;
+      border-radius: 6px 6px 3px 3px;
+      background: repeating-linear-gradient(
+        45deg,
+        #ff69b4,
+        #ff69b4 6px,
+        #fff 6px,
+        #fff 12px
+      );
+      box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.12);
+    }
+
+    .flame {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 22px;
+      background: radial-gradient(circle at 50% 70%, #fff176 15%, #ff9800 60%, #f44336 100%);
+      border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+      box-shadow: 0 0 14px #ffb300, 0 0 26px #ff5722;
+      animation: flicker 0.22s infinite alternate;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .flame.blown {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.2);
+      animation: none;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+      100% { transform: translateX(-50%) scale(1.12, 0.94) rotate(3deg); }
+    }
+
+    .cake-top-layer {
+      width: 185px;
+      height: 42px;
+      background: linear-gradient(180deg, #ff7eb3 0%, #ff4d94 100%);
+      border-radius: 16px 16px 6px 6px;
+      position: relative;
+      z-index: 3;
+      box-shadow: inset 0 -4px rgba(0, 0, 0, 0.08);
+    }
+
+    .icing-drips {
+      position: absolute;
+      top: 26px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 8px;
+    }
+
+    .drip {
+      width: 18px;
+      height: 22px;
+      background: #fff0f6;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .cake-bottom-layer {
+      width: 215px;
+      height: 54px;
+      background: linear-gradient(180deg, #f48fb1 0%, #ec407a 100%);
+      border-radius: 10px 10px 14px 14px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0 14px;
+    }
+
+    .sprinkle {
+      font-size: 0.95rem;
+    }
+
+    .cake-plate {
+      width: 250px;
+      height: 14px;
+      background: linear-gradient(90deg, #f8bbd0, #ffffff, #f8bbd0);
+      border-radius: 999px;
+      box-shadow: 0 6px 14px rgba(216, 27, 96, 0.2);
+      z-index: 1;
+    }
+
+    /* Dark Pink Buttons */
+    .btn-dark-pink {
+      background: linear-gradient(135deg, #e91e63 0%, var(--dark-pink) 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 13px 26px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(216, 27, 96, 0.32);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-dark-pink:hover {
+      background: linear-gradient(135deg, var(--dark-pink) 0%, var(--dark-pink-hover) 100%);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 26px rgba(216, 27, 96, 0.42);
+    }
+
+    .btn-dark-pink:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .btn-sm {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .music-status {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--dark-pink);
+      font-weight: 500;
+      min-height: 20px;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-family: 'Fredoka', cursive;
+      font-size: 1.75rem;
+      color: var(--dark-pink);
+      margin: 42px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Cards Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 105, 180, 0.3);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--dark-pink);
+      background: #ffe3ee;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+
+    .card h3 {
+      font-family: 'Fredoka', cursive;
+      font-size: 1.35rem;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .display-box {
+      background: #fff6fa;
+      border-left: 4px solid var(--dark-pink);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 18px;
+      min-height: 92px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 0.97rem;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+
+    .display-box.no-button-box {
+      margin-bottom: 0;
+    }
+
+    .dua-arabic {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark-pink);
+      margin-bottom: 6px;
+    }
+
+    .memory-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .memory-list li {
+      background: #fff6fa;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 0.93rem;
+      line-height: 1.55;
+      border: 1px dashed rgba(216, 27, 96, 0.25);
+    }
+
+    .memory-list li strong {
+      color: var(--dark-pink);
+    }
+
+    .card-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .counter-pill {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 56px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    footer strong {
+      color: var(--dark-pink);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Floating Flowers, Butterflies & Hearts -->
+  <div id="ambient-layer" aria-hidden="true"></div>
+
+  <!-- Burst Layer for Celebrate Button -->
+  <div id="celebration-layer" aria-hidden="true"></div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge">✨ Special Surprise For Falak Chaudhary ✨</div>
+      <h1>Happy Birthday, Falak Chaudhary! 🎂</h1>
+      <p class="subtitle">
+        A pink-and-sparkle surprise full of prayers, school & college memories, teacher jokes, and endless laughs — made with love by <strong>Sania</strong>! 💕
+      </p>
+
+      <!-- Cake & Candles -->
+      <div class="cake-stage">
+        <div class="cake" aria-label="Birthday cake with lit candles">
+          <div class="candles-row">
+            <div class="candle"><span class="flame"></span></div>
+            <div class="candle"><span class="flame"></span></div>
+            <div class="candle"><span class="flame"></span></div>
+          </div>
+          <div class="cake-top-layer">
+            <div class="icing-drips">
+              <span class="drip"></span>
+              <span class="drip"></span>
+              <span class="drip"></span>
+              <span class="drip"></span>
+              <span class="drip"></span>
+            </div>
+          </div>
+          <div class="cake-bottom-layer">
+            <span class="sprinkle">🌸</span>
+            <span class="sprinkle">💖</span>
+            <span class="sprinkle">✨</span>
+            <span class="sprinkle">🦋</span>
+          </div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <!-- Celebrate & Candle Buttons -->
+      <div class="hero-actions">
+        <button class="btn-dark-pink" id="celebrateBtn" type="button">
+          🎉 Celebrate & Play Tune
+        </button>
+        <button class="btn-dark-pink btn-sm" id="blowCandleBtn" type="button">
+          🕯️ Make a Wish / Blow Candles
+        </button>
+      </div>
+      <div class="music-status" id="musicStatus"></div>
+    </section>
+
+    <!-- Prayer & General Jokes Cards -->
+    <section aria-label="Prayers and Jokes">
+      <div class="grid-2">
+        <!-- Prayer Card -->
+        <article class="card">
+          <div>
+            <span class="card-tag">🤲 Birthday Blessings</span>
+            <h3>Heartfelt Prayer for Falak</h3>
+            <div class="display-box" id="duaBox">
+              <div class="dua-arabic" id="duaTitle">Dua #1 — Health, Peace & Noor</div>
+              <p id="duaText">
+                Ya Allah, Falak Chaudhary ki zindagi ko barkat, sehat, sukoon aur bepanah khushiyon se bhar de. Uski har mushkil aasan farma aur uski har nek khwahish ko poori kar. Ameen! 🌸
+              </p>
+            </div>
+          </div>
+          <div class="card-footer-row">
+            <button class="btn-dark-pink btn-sm" id="specialDuaBtn" type="button">
+              ✨ Special Dua
+            </button>
+            <span class="counter-pill" id="duaCounter">Dua 1 of 5</span>
+          </div>
+        </article>
+
+        <!-- General Funny Jokes Card -->
+        <article class="card">
+          <div>
+            <span class="card-tag">😂 Non-Stop Laughs</span>
+            <h3>Birthday & Funny Jokes</h3>
+            <div class="display-box" id="generalJokeBox">
+              <p id="generalJokeText">
+                Falak se kisi ne poocha: "Aaj birthday par kya legi?" Falak boli: "Pehle cake aur treat, phir 2 ghante tak ye sochungi ke diet kab se shuru karni hai!" 😂🎂
+              </p>
+            </div>
+          </div>
+          <div class="card-footer-row">
+            <button class="btn-dark-pink btn-sm" id="nextJokeBtn" type="button">
+              🤣 Next Joke
+            </button>
+            <span class="counter-pill" id="generalJokeCounter">Joke 1 of 6</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- School & College Memories Card -->
+    <section aria-label="School and College Memories">
+      <h2 class="section-title">🎓 School & College Memories</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div>
+            <span class="card-tag">🏫 School Days</span>
+            <h3>Bell Rings, Tiffin & Backbench Masti</h3>
+            <ul class="memory-list">
+              <li><strong>Morning Assembly & Late Entry:</strong> "Bas 2 minute aur ruk jaate hain" keh kar assembly khatam hone ka intezaar aur gate par bhaag kar pahunchna — aur phir bhi uski entry dramatic hi hoti thi!</li>
+              <li><strong>Copy Exchange Mission:</strong> Class shuru hone se 5 minutes pehle notebooks maangna aur uski handwriting samajhne ki full koshish karna.</li>
+              <li><strong>Break Time & Canteen:</strong> Chhoti si cheezon par zor zor se hansna aur bell bajte hi canteen ki taraf full speed mein nikalna.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="card-tag">🎓 College Days</span>
+            <h3>Assignments, Bunking & Endless Gup-Shup</h3>
+            <ul class="memory-list">
+              <li><strong>Last-Minute Notes & Viva:</strong> Paper se ek raat pehle "sab kuch yaad hai" aur exam hall ke bahar "yaar ye wala topic kisne padha?"</li>
+              <li><strong>Corridor Walks & Photos:</strong> Classes ke darmiyan lambe rounds, candid photos, aur har chhoti baat par naya inside joke bana lena.</li>
+              <li><strong>Friendship That Stayed:</strong> Waqt guzar gaya, par school aur college ki un yaadon ki mithas aaj bhi bilkul taaza hai. 💕</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Subject & Teacher-Wise Jokes Cards (NO BUTTONS BELOW) -->
+    <section aria-label="Subject and Teacher Jokes">
+      <h2 class="section-title">📚 Subject & Teacher-Wise Jokes</h2>
+      <div class="grid-3">
+
+        <!-- 1. Ma'am Irum (Physics) -->
+        <article class="card">
+          <div>
+            <span class="card-tag">⚛️ Physics</span>
+            <h3>Ma'am Irum (Physics)</h3>
+            <div class="display-box no-button-box">
+              <p>
+                Maam Irum ki class mein entry hotty hi eyes automatically close hona shuru"⚡😂
+                <br>
+                Newton or Einstein ky law samaj ay hon ya na hon pr eyes khole kar sony waly sary law humy hi tu atty thy🤣, eyes khole kar sony wala world record hum ny hi banaya🤣.(Maam ko poory marks dany chahyyy thy).
+                <br>
+                Ak or hammari brillent skill jiss ki maam irum ny qadar nai ki ,ky test ko baant kar kasy tayaar karna ha, phir ak dosry ko test ky doraan kasy dikhana ha ya world record bi hum ny banaya🤣.(numerical byshuk tum ny dikhay but short sawal mendy hondy ayy sary aundy ayy)</div>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Ma'am Marium (English) -->
+        <article class="card">
+          <div>
+            <span class="card-tag">📖 English</span>
+            <h3>Ma'am Marium (English)</h3>
+            <div class="display-box no-button-box">
+              <p>
+                • "Queen Elizabeth-e-Pakistan": Jo har baat par aisi angrezi jhaarti hain jaise abhi abhi Buckingham Palace se chhutti le kar aayi hon😂🤣.<br>
+• "Grammar Police" : Jin ke saamne agar ghalti se "I did not went" bol do, toh aise dekhti hain jaise aap ne koi qatal kar diya ho 🤣😂.<br>
+• "Oxford Ki Chalti Phirti Dictionary": Jin ke har jumle mein 5 aise mushkil lafz hote hain jin ka matlab khud unhein bhi Google karna parta hai." ✍️😂
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Ma'am Bushra (Urdu) -->
+        <article class="card">
+          <div>
+            <span class="card-tag">✍️ Urdu</span>
+            <h3>Ma'am Bushra (Urdu)</h3>
+            <div class="display-box no-button-box">
+              <p>
+• "Shayarana Bushra": Jinhein gussa bhi aaye toh daantne ke bajaye Mirza Ghalib ya Allama Iqbal ka sher suna kar beizzati karti hain😂🤣.<br><br>
+    Ma'am Bushra seedha nahi dant'tin, woh pehle Iqbal ke shaheen ki misaal deti hain aur phir aisa sher maarti hain ke student khud ko shaheen ke bajaye murghi samajhne lagta hai! 🐔😂, kisi ki insult bhi Mirza Ghalib aur Allama Iqbal ke sheron mein aisi karti hain ke banda pehle "Wah wah!" bolta hai, aur ghar ja kar samajh aati hai ke aaj to shayari ki chaashni mein beizzati ka zehar pila diya gaya tha! 📜😂
+                • "Imla (Dictation) ki Don": Jin ke muh se "Nuqta" aur "Zabar-Zer" ki ghalti par aisi daant parti hai jaise kisi ne mulk ka khazana loot liya ho😂🤣<br>
+Hum wo students thy jinon ny kabi urdu ki tension nai li bcz shayri ki tashri ho, mukalma ya mazmoon nigari ho hum sy bada philospher koi nai tha ya record bi hum ny banaya tha🤣.
+
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Principal Haleema Shoaib -->
+        <article class="card">
+          <div>
+            <span class="card-tag">👑 Principal</span>
+            <h3>Principal Haleema Shoaib</h3>
+            <div class="display-box no-button-box">
+              <p>
+                Jab Principal Haleema Shoaib corridor se guzrein aur poori class achanak seedhi baith jaye — Falak ka posture ek second mein 'top student of the year' ban jata hai! 🏫😂
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Ma'am Rubina (Bio & Maths) -->
+        <article class="card">
+          <div>
+            <span class="card-tag">🧬 Bio + ➗ Maths</span>
+            <h3>Ma'am Rubina (Bio & Maths)</h3>
+            <div class="display-box no-button-box">
+              <p>
+                "Bio-Math-ics" (بائیو میتھکس): Ek aisi science jo sirf Ma'am Rubina ki class mein pai jati hai🤣<br>
+                 Ma'am Rubina:Dhamakydaar maths ki  aisi all-rounder hain ke Bio padhate padhate achanak Algebra mein ghus jati hain—unke mutabiq agar frog ka dissection sahi nahi hua, to uski wajah yeh hai ke tumne LHS = RHS prove nahi kiya! 🐸📐😂<br>
+              Agar koi teacher chutti kar lati tu samjo ky maam rubina ki entry pakki.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Ma'am Tayiba Jabeen (Chemistry & Physics) -->
+        <article class="card">
+          <div>
+            <span class="card-tag">🧪 Chemistry & ⚛️ Physics</span>
+            <h3>Ma'am Tayiba Jabeen</h3>
+            <div class="display-box no-button-box">
+              <p>
+                Ma'am Tayiba Jabeen Chemistry aur Physics dono sambhalti hain — jab formula aur reaction dono yaad karne hon, toh dimaag mein sach ka dhuan nikal aata hai! 🧪⚡🤣
+                Maam tayiba galti sy bi chutti nahi karti thin agar kar bi latti kabi ya galti sarzud ho bi jatti tu uss ki saza humy maam rubina ki soorat mein milti,(poory 3 period maths 😴)
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Ma'am Kausar (Mutalia, English, Urdu, Islamiat) -->
+        <article class="card">
+          <div>
+            <span class="card-tag">🌍 Mutalia, Eng, Urdu & Islamiat</span>
+            <h3>Ma'am Kausar (All Subjects)</h3>
+            <div class="display-box no-button-box">
+              <p>
+                Ma'am Kausar Mutalia, English, Urdu aur Islamiat sab padhati hain — lagta hai poora time-table ek hi teacher mein fit kar diya gaya hai! 📚😄
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Sania & Falak Talks Card -->
+    <section aria-label="Sania and Falak Talks">
+      <h2 class="section-title">💕 Sania & Falak Talks</h2>
+      <article class="card">
+        <div>
+          <span class="card-tag">💬 Bestie Chronicles</span>
+          <h3>Hamari Baatein, Hamara Vibe</h3>
+          <div class="display-box" id="saniaFalakBox">
+            <p id="saniaFalakText">
+              <strong>Sania:</strong> Ticket  tery wo songs jo mein sunna karti thi aaj bi yaad atty han ( kabi kabi teri surili awaaz sy mery pass sy shitaan bi bhaag jata tha but mein teri pakki dost bardasht kar lati thi)
+          </div>
+        </div>
+        <div class="card-footer-row">
+          <button class="btn-dark-pink btn-sm" id="nextTalkBtn" type="button">
+            💌 Next Sania & Falak Talk
+          </button>
+          <span class="counter-pill" id="talkCounter">Talk 1 of 5</span>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      Made with 🌸, 🦋 & 💖 by <strong>Sania</strong> for <strong>Falak Chaudhary</strong> — Wishing uska har din khushiyon se bhara rahe!
+    </footer>
+  </main>
+
+  <script>
+    // 1. Ambient Floating Flowers, Butterflies & Hearts
+    const ambientLayer = document.getElementById("ambient-layer");
+    const celebrationLayer = document.getElementById("celebration-layer");
+    const ambientEmojis = ["🌸", "🌺", "🦋", "🌷", "💖", "🌼", "🦋"];
+
+    function spawnFloatingItem(targetLayer, pool, options = {}) {
+      const el = document.createElement("div");
+      el.className = "floating-item";
+      el.textContent = pool[Math.floor(Math.random() * pool.length)];
+
+      const left = Math.random() * 100;
+      const size = options.size || (1.2 + Math.random() * 1.35);
+      const duration = options.duration || (7 + Math.random() * 6);
+      const sway = (Math.random() > 0.5 ? 1 : -1) * (25 + Math.random() * 55);
+
+      el.style.left = `${left}%`;
+      el.style.fontSize = `${size}rem`;
+      el.style.setProperty("--sway", `${sway}px`);
+      el.style.animationDuration = `${duration}s`;
+
+      targetLayer.appendChild(el);
+      setTimeout(() => el.remove(), duration * 1000 + 200);
+    }
+
+    for (let i = 0; i < 14; i++) {
+      setTimeout(() => spawnFloatingItem(ambientLayer, ambientEmojis), i * 350);
+    }
+    setInterval(() => spawnFloatingItem(ambientLayer, ambientEmojis), 950);
+
+    // 2. "Happy Birthday to You" Tune via Web Audio API
+    let audioCtx = null;
+    let isPlayingTune = false;
+
+    const melody = [
+      { freq: 261.63, dur: 0.35 },
+      { freq: 261.63, dur: 0.25 },
+      { freq: 293.66, dur: 0.6 },
+      { freq: 261.63, dur: 0.6 },
+      { freq: 349.23, dur: 0.6 },
+      { freq: 329.63, dur: 1.0 },
+
+      { freq: 261.63, dur: 0.35 },
+      { freq: 261.63, dur: 0.25 },
+      { freq: 293.66, dur: 0.6 },
+      { freq: 261.63, dur: 0.6 },
+      { freq: 392.00, dur: 0.6 },
+      { freq: 349.23, dur: 1.0 },
+
+      { freq: 261.63, dur: 0.35 },
+      { freq: 261.63, dur: 0.25 },
+      { freq: 523.25, dur: 0.6 },
+      { freq: 440.00, dur: 0.6 },
+      { freq: 349.23, dur: 0.6 },
+      { freq: 329.63, dur: 0.6 },
+      { freq: 293.66, dur: 1.0 },
+
+      { freq: 466.16, dur: 0.35 },
+      { freq: 466.16, dur: 0.25 },
+      { freq: 440.00, dur: 0.6 },
+      { freq: 349.23, dur: 0.6 },
+      { freq: 392.00, dur: 0.6 },
+      { freq: 349.23, dur: 1.2 }
+    ];
+
+    function playHappyBirthdayTune() {
+      const statusEl = document.getElementById("musicStatus");
+      if (isPlayingTune) return;
+
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) {
+        statusEl.textContent = "🎶 Happy Birthday to You, Falak Chaudhary! 🎉";
+        return;
+      }
+
+      if (!audioCtx) {
+        audioCtx = new AudioContextClass();
+      }
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+
+      isPlayingTune = true;
+      statusEl.textContent = "🎵 Playing: Happy Birthday to You, Falak Chaudhary...";
+
+      let currentTime = audioCtx.currentTime + 0.05;
+
+      melody.forEach((note) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(note.freq, currentTime);
+
+        gain.gain.setValueAtTime(0.001, currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.18, currentTime + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.001, currentTime + note.dur * 0.92);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(currentTime);
+        osc.stop(currentTime + note.dur);
+
+        currentTime += note.dur;
+      });
+
+      const totalMs = melody.reduce((acc, n) => acc + n.dur * 1000, 100);
+      setTimeout(() => {
+        isPlayingTune = false;
+        statusEl.textContent = "✨ Click Celebrate anytime for more balloons, flowers & tune!";
+      }, totalMs);
+    }
+
+    function relightCandles() {
+      document.querySelectorAll(".flame").forEach((flame) => {
+        flame.classList.remove("blown");
+      });
+    }
+
+    document.getElementById("celebrateBtn").addEventListener("click", () => {
+      relightCandles();
+      playHappyBirthdayTune();
+
+      const burstPool = ["🦋", "🌸", "🌺", "🎈", "🌷", "🎈", "💐", "🦋", "🎈"];
+      for (let i = 0; i < 48; i++) {
+        setTimeout(() => {
+          spawnFloatingItem(celebrationLayer, burstPool, {
+            size: 1.5 + Math.random() * 1.4,
+            duration: 3.5 + Math.random() * 3.5
+          });
+        }, i * 65);
+      }
+    });
+
+    document.getElementById("blowCandleBtn").addEventListener("click", () => {
+      document.querySelectorAll(".flame").forEach((flame) => {
+        flame.classList.add("blown");
+      });
+      document.getElementById("musicStatus").textContent =
+        "🕯️ Wish made! Uski har khwahish poori ho ✨";
+    });
+
+    // 3. Special Prayers Data & Logic
+    const duas = [
+      {
+        title: "Dua #1 — Health, Peace & Noor",
+        text: "Ya Allah, Falak ki zindagi ko barkat, sehat, sukoon aur bepanah khushiyon se bhar de. Uski har mushkil aasan farma aur uski har nek khwahish ko poori kar. Ameen! 🌸"
+      },
+      {
+        title: "Dua #2 — Success & Bright Future",
+        text: "Ya Rabb, Falak ko ilm, hikmat aur kamyabi ki bulandiyon tak pahunche. Uski har manzil aasan kar aur uski mehnat ka behtareen ajar de. Ameen! ✨"
+      },
+      {
+        title: "Dua #3 — Protection From All Harm",
+        text: "Ya Allah, Falak aur uski poori family ko har buri nazar, har gham aur har pareshani se apni hifazat mein rakhna. Uski muskurahat hamesha qayam rakhna. Ameen! 🤲"
+      },
+      {
+        title: "Dua #4 — Contentment & Gratitude",
+        text: "Ya Kareem, Falak ke dil ko itminan, zubaan ko shukr aur zindagi ko aisi khushiyon se nawaz de jin ka kabhi zawal na ho. Ameen! 💖"
+      },
+      {
+        title: "Dua #5 — Forever Smiles & Blessings",
+        text: "Ya Allah, Falak Chaudhary ka aane wala har saal guzre hue saal se zyada khubsurat, mubarak aur kamyab bana de. Use hamesha apni rehmat ke saaye mein rakhna. Ameen! 🦋"
+      }
+    ];
+    let duaIndex = 0;
+
+    document.getElementById("specialDuaBtn").addEventListener("click", () => {
+      duaIndex = (duaIndex + 1) % duas.length;
+      document.getElementById("duaTitle").textContent = duas[duaIndex].title;
+      document.getElementById("duaText").textContent = duas[duaIndex].text;
+      document.getElementById("duaCounter").textContent = `Dua ${duaIndex + 1} of ${duas.length}`;
+    });
+
+    // 4. General Funny Jokes Data & Logic
+    const generalJokes = [
+      "Falak se kisi ne poocha: \"Aaj birthday par kya legi?\" Falak boli: \"Pehle cake aur treat, phir 2 ghante tak ye sochungi ke diet kab se shuru karni hai!\" 😂🎂",
+      "Jab Falak kehti hai \"Bas 5 minute mein nikal rahi hoon\" — uska 5 minute kam se kam 45 minute aur 3 outfit changes ke barabar hota hai! 👗🤣",
+      "Subah uthne ke baad uski pehli line: \"Mera phone kahan hai?\" Aur doosri line: \"Aaj mujhe neend kyun aa rahi hai?\" 😴📱",
+      "Agar Falak khamosh ho toh samjho ya toh woh kuch soch rahi hai, ya phir usko bhook lag rahi hai! 🍕😄",
+      "Birthday par uski sabse badi demand: \"Photo aisi lena ke main thodi patli aur bohot pyari lagun!\" 📸✨",
+      "Kisi ne poocha: \"Tumhari sabse badi superpower kya hai?\" Falak: \"Bina wajah hasna aur agle hi pal bhool jana ke kyun hans rahi thi!\" 🤣🦋"
+    ];
+    let generalJokeIndex = 0;
+
+    document.getElementById("nextJokeBtn").addEventListener("click", () => {
+      generalJokeIndex = (generalJokeIndex + 1) % generalJokes.length;
+      document.getElementById("generalJokeText").textContent = generalJokes[generalJokeIndex];
+      document.getElementById("generalJokeCounter").textContent = `Joke ${generalJokeIndex + 1} of ${generalJokes.length}`;
+    });
+
+    // 5. Sania & Falak Talks Data & Logic
+    const saniaFalakTalks = [
+      "<strong>Sania:</strong> \"Falak, aaj tera birthday hai, bol kya khayegi?\"<br><strong>Falak:</strong> \"Pehle cake aur treat, phir uski lambi list — aur haan, photos zaroor leni hain!\" 😂💖",
+      "<strong>Sania:</strong> \"Yaar waqt kitni jaldi guzar gaya, par uski baatein aaj bhi bilkul waisi hi hain!\"<br><strong>Falak:</strong> \"Haan Sania, kyunki main kabhi badalti nahi — bas thodi aur samajhdar ho gayi hoon!\" 🌸🤣",
+      "<strong>Sania:</strong> \"Agar koi pooche hamari dosti ka secret kya hai?\"<br><strong>Falak:</strong> \"Bina filter ke baatein, full masti aur uski har baat par mera 'acha acha' kehna!\" ✨👯‍♀️",
+      "<strong>Sania:</strong> \"Aaj ke birthday par uski koi secret wish batao?\"<br><strong>Falak:</strong> \"Har khushi mile, kabhi kisi cheez ki kami na ho, aur humari dosti hamesha aisi hi rahe!\" 🎂🦋",
+      "<strong>Sania:</strong> \"Happy Birthday once again meri pyari Falak Chaudhary!\"<br><strong>Falak:</strong> \"Thank you Sania, uski ye mehnat aur pyaar dekh kar dil khush ho gaya!\" 💖🎉"
+    ];
+    let talkIndex = 0;
+
+    document.getElementById("nextTalkBtn").addEventListener("click", () => {
+      talkIndex = (talkIndex + 1) % saniaFalakTalks.length;
+      document.getElementById("saniaFalakText").innerHTML = saniaFalakTalks[talkIndex];
+      document.getElementById("talkCounter").textContent = `Talk ${talkIndex + 1} of ${saniaFalakTalks.length}`;
+    });
+  </script>
+</body>
+</html>
